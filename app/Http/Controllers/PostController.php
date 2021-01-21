@@ -16,4 +16,8 @@
          //変数postsでviewに全てのデータを渡す
          return view("index")->with(['posts' => $post->getPaginateLimit(1)]);
      }
+     //記事の表示
+     public function show(Post $post){
+      return view('show')->with(['post' => $post]);
+     }
  }
