@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*
 Route::get('/',function(){
     return view("index");
 });
+*/
 
-Route::get('/posts', 'App\Http\Controllers\PostController@index');
+//初めは記事一覧
+Route::get('/', 'App\Http\Controllers\PostController@index');
