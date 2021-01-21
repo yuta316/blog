@@ -6,6 +6,8 @@
  
  //table Postの値を受け取れるようにする
  use App\Models\Post;
+ //PostRequest
+ use App\Http\Requests\PostRequest;
  
  class PostController extends Controller
  {
@@ -14,10 +16,22 @@
      {
          //index(,blade.php)のviewを返したい
          //変数postsでviewに全てのデータを渡す
-         return view("index")->with(['posts' => $post->getPaginateLimit(1)]);
+         return view("index")->with(['posts' => $post->getPaginateLimit()]);
      }
      //記事の表示
      public function show(Post $post){
       return view('show')->with(['post' => $post]);
+     }
+     //記事の作成
+     public function create(){
+     return view('create');
+     }
+     //userからのリクエストをPostに
+     public function store(PostRequest $request, Post $post){
+      //入力を変数に
+      $input = $request['post'];
+      //insert
+      $post->fill($input)->save();;
+      return redirect('/posts/'.$post->id);
      }
  }
