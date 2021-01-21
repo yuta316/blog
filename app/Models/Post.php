@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $fillable = [
+        'title',
+        'body',
+        ];
+    
     public function getPaginateLimit(int $limit_clount=10){
         //アップロード順に取得
         //続けてペジネートを行う(get()いらない!)

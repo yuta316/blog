@@ -8,3 +8,6 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/posts/create', 'App\Http\Controllers\PostController@create');
 // 詳細記事
 Route::get('/posts/{post}', 'App\Http\Controllers\PostController@show');
+
+//Post reauestを受け取った時
+Route::post('/posts', 'App\Http\Controllers\PostController@store');

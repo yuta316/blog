@@ -9,10 +9,6 @@
  
  class PostController extends Controller
  {
-     public function create()
-     {
-       return view('create');
-     }
      //Post table の値を変数$postで受け取る
      public function index(Post $post)
      {
@@ -25,5 +21,15 @@
       return view('show')->with(['post' => $post]);
      }
      //記事の作成
-     
+     public function create(){
+     return view('create');
+     }
+     //userからのリクエストをPostに
+     public function store(Request $request, Post $post){
+      //入力を変数に
+      $input = $request['post'];
+      //insert
+      $post->fill($input)->save();;
+      return redirect('/posts/'.$post->id);
+     }
  }
