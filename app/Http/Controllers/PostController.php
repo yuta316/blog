@@ -6,6 +6,8 @@
  
  //table Postの値を受け取れるようにする
  use App\Models\Post;
+ //PostRequest
+ use App\Http\Requests\PostRequest;
  
  class PostController extends Controller
  {
@@ -25,7 +27,7 @@
      return view('create');
      }
      //userからのリクエストをPostに
-     public function store(Request $request, Post $post){
+     public function store(PostRequest $request, Post $post){
       //入力を変数に
       $input = $request['post'];
       //insert
