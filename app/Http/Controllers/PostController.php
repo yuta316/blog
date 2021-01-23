@@ -28,14 +28,15 @@
      {
          return view('create');
      }
-     //userからのリクエストをPostに
+     
+     //userからのリクエストに含まれるデータを扱うときはRequestインスタンスを使う
+     //$requestのキーはHTMLのnameと一致
      public function store(PostRequest $request, Post $post)
      {
-         //入力を変数に
+         //入力を全て変数に
          $input = $request['post'];
-         //insert
-         $post->fill($input)->save();
-         ;
+         //insert　PostModelでfillabeになっていることを注意
+         $post->fill($input)->save();  //create($input)でも可能.
          return redirect('/posts/'.$post->id);
      }
      
