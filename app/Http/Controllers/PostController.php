@@ -34,4 +34,22 @@
       $post->fill($input)->save();;
       return redirect('/posts/'.$post->id);
      }
+     
+     public function edit(Post $post){
+      return view('edit')->with(['post'=>$post]);
+     }
+     public function update(PostRequest $request, Post $post){
+      $input_n = $request['post'];
+      //insert
+      $post->fill($input_n)->save();
+      return redirect('/posts/'.$post->id);
+     }
+     
+     //削除メソッド
+     public function destroy(Post $post){
+      //論理削除
+      $post->delete();
+      return redirect('/');
+     }
  }
+ 
