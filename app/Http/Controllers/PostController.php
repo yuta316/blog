@@ -1,7 +1,7 @@
 <?php
  
  namespace App\Http\Controllers;
- 
+
  use Illuminate\Http\Request;
  
  //table Postの値を受け取れるようにする
@@ -19,37 +19,43 @@
          return view("index")->with(['posts' => $post->getPaginateLimit()]);
      }
      //記事の表示
-     public function show(Post $post){
-      return view('show')->with(['post' => $post]);
+     public function show(Post $post)
+     {
+         return view('show')->with(['post' => $post]);
      }
      //記事の作成
-     public function create(){
-     return view('create');
+     public function create()
+     {
+         return view('create');
      }
      //userからのリクエストをPostに
-     public function store(PostRequest $request, Post $post){
-      //入力を変数に
-      $input = $request['post'];
-      //insert
-      $post->fill($input)->save();;
-      return redirect('/posts/'.$post->id);
+     public function store(PostRequest $request, Post $post)
+     {
+         //入力を変数に
+         $input = $request['post'];
+         //insert
+         $post->fill($input)->save();
+         ;
+         return redirect('/posts/'.$post->id);
      }
      
-     public function edit(Post $post){
-      return view('edit')->with(['post'=>$post]);
+     public function edit(Post $post)
+     {
+         return view('edit')->with(['post'=>$post]);
      }
-     public function update(PostRequest $request, Post $post){
-      $input_n = $request['post'];
-      //insert
-      $post->fill($input_n)->save();
-      return redirect('/posts/'.$post->id);
+     public function update(PostRequest $request, Post $post)
+     {
+         $input_n = $request['post'];
+         //insert
+         $post->fill($input_n)->save();
+         return redirect('/posts/'.$post->id);
      }
      
      //削除メソッド
-     public function destroy(Post $post){
-      //論理削除
-      $post->delete();
-      return redirect('/');
+     public function destroy(Post $post)
+     {
+         //論理削除
+         $post->delete();
+         return redirect('/');
      }
  }
- 

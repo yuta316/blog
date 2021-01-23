@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -17,7 +16,8 @@ class Post extends Model
         'body',
         ];
     
-    public function getPaginateLimit(int $limit_clount=10){
+    public function getPaginateLimit(int $limit_clount=10)
+    {
         //アップロード順に取得
         //続けてペジネートを行う(get()いらない!)
         return $this->orderBy('updated_at', 'DESC')->paginate($limit_clount);
