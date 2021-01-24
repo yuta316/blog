@@ -6,6 +6,8 @@
  
  //table Postの値を受け取れるようにする
  use App\Models\Post;
+  //table Postの値を受け取れるようにする
+ use App\Models\Comment;
  //PostRequest
  use App\Http\Requests\PostRequest;
  
@@ -21,7 +23,10 @@
      //記事の表示
      public function show(Post $post)
      {
-         return view('show')->with(['post' => $post]);
+         return view('show')->with([
+          'post' => $post,
+          'comments' => $post,
+          ]);
      }
      //記事の作成
      public function create()
@@ -56,7 +61,7 @@
      public function destroy(Post $post)
      {
          //論理削除
-         $post->delete();
+         $post->deleteWithRelation();
          return redirect('/');
      }
  }
