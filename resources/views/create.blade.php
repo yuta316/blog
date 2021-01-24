@@ -30,6 +30,6 @@
         </form>
         <!--以上入力フォーム-->
         <!--戻るボタン-->
-        <div class='back'>[<a href='/'>back</a>]</div>
+        <div class='back'>Back Home >>> [<a href='/'>back</a>]</div>
     </body>
 </html>
