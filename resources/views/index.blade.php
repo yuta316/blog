@@ -12,14 +12,16 @@
         
     </head>
     <body>
-        <h1>Blog Name</h1>
-        <p class='create'>[<a href='/posts/create'>create</a>]</p>
+        <h1>List Of Articles</h1>
+        <!--記事作成画面へ飛ばすようコントローラへ依頼-->
+        <p class='create'>Create New Aritcle >>> [<a href='/posts/create'>create</a>]</p>
         <div class="posts">
-            <!--table postsの値を受け取る-->
+            <!--table postsの値を受け取り表示-->
             @foreach ($posts as $post)
                 <div class="post">
-                  <a href='posts/{{$post->id}}' ><h2 class="title">{{ $post->title }}</h2></a>
-                  <p class='body'>{{ $post->body }}</p>
+                  <h2 class="title">Title : 
+                  <a href='posts/{{$post->id}}' >{{ $post->title }}</a></h2>
+                  <p class='body'>[   {{ $post->body }}....... at {{$post->updated_at}} ]</p>
                 </div>
             @endforeach
         </div>
