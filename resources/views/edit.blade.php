@@ -7,22 +7,31 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>Blog Name</h1>
+        <h1>Edit Aritcle :|</h1>
+        <!--以下フォーム-->
         <form action="/posts/{{$post->id}}" method="POST">
             {{ csrf_field() }}
             @method('PUT')
+            
+            <!--Title-->
             <div class="title">
-                <h2>Title</h2>
-                <input type='text' name="post[title]" placeholder="TITlE" value={{$post->title}}/>
+                <h2>Title?</h2>
+                <!--基本はCreateと同じ-->
+                <input type='text' name="post[title]" placeholder="Title" value={{$post->title}} />
                 <p class='title_error' style="color:red">{{ $errors->first('post.title')}}</p>
             </div>
+            
+            <!--Body-->            
             <div class="body">
-                <h2>Body</h2>
+                <h2>Body?</h2>
                 <textarea name="post[body]" placeholder="Have a good day!">{{$post->body}}</textarea>
                 <p class='body_error' style="color:red">{{ $errors->first('post.body')}}</p>
             </div>
-            <input type="submit" value="update">
+            
+            <input type="submit" value="Update!!">
         </form>
-        <div class='back'>[<a href='/posts/{{$post->id}}'>back</a>]</div>
+        <!--以上フォーム-->
+        <!--back-->
+        <div class='back'>Back Home >> [<a href='/posts/{{$post->id}}'>back</a>]</div>
     </body>
 </html>

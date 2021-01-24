@@ -7,12 +7,18 @@
         <title>Blog</title>
     </head>
     <body>
+        <!--記事作成画面-->
         <h1>Blog Name</h1>
+        <h2>Create Article :)</h2>
+        <!--以下入力フォーム-->
+        <!--submit->"/posts/"にアクセスするためContorollerに渡す.-->
         <form action="/posts" method="POST">
+            <!--laravelのフォームはcsrfが必須-->
             {{ csrf_field() }}
             <div class="title">
                 <h2>Title</h2>
-                <input type='text' name="post[title]" placeholder="TITlE"/>
+                <!--nameは$requestにデータを入れるときの引数-->
+                <input type='text' name="post[title]" placeholder="Title"/>
                 <p class='title_error' style="color:red">{{ $errors->first('post.title')}}</p>
             </div>
             <div class="body">
@@ -22,6 +28,8 @@
             </div>
             <input type="submit" value="store"/>
         </form>
+        <!--以上入力フォーム-->
+        <!--戻るボタン-->
         <div class='back'>[<a href='/'>back</a>]</div>
     </body>
 </html>
