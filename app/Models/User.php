@@ -22,6 +22,13 @@ class User extends Authenticatable
         'password',
     ];
 
+
+    //記事とのリレーション定義
+    public function posts(){
+        //userに対して多対一
+        return $this->hasMany('App\Models\Post');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *

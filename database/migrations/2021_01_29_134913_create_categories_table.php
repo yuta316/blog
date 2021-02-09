@@ -13,10 +13,14 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        #Categoryテーブルの作成
         Schema::create('categories', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name',255)->comment('名前');
             $table->timestamps();
+            $table->softDeletes();
         });
+        DB::statement("ALTER TABLE comments COMMENT 'カテゴリー'");
     }
 
     /**

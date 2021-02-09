@@ -1,0 +1,172 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+header {
+  display: block;
+  width: auto;
+  height: 90px;
+  margin: 0 auto;
+  background-color: #fff7f7;
+  opacity: 0.5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: aliceblue;
+  font-size: 1.2rem;
+  line-height: 2;
+}
+*,*::before,*::after {
+  box-sizing: border-box;
+}
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Red Rose', cursive;
+  font: bold;
+  font-size: 30px;
+}
+div{
+  font-family: 'Red Rose', cursive;
+  font: bold;
+}
+img {
+  vertical-align: bottom;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+a{
+  color: #3583aa;
+  text-decoration: none;
+}
+a:visited {
+  color: #7c5119;;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+footer{
+  /*display: block;*/
+  width: 100%;
+  height: 30px;
+  background-color: #fff7f7;
+  opacity: 0.6;
+ position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+}
+footer p {
+  text-align: center;
+  font-family: 'Red Rose', cursive;
+  color: #333;
+}
+
+.logo {
+  float: left;
+  margin: auto auto;
+}
+
+#photograph {
+  background-image: url(../images/dog.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#navigation {
+  float: right;
+}
+#navigation li  {
+  float: left;
+  margin: 0 20px;
+  font-size: 20px;
+  list-style: none;
+  font-family: 'Red Rose', cursive;
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+
+.post {
+    margin: 30px auto;
+    width: 80%;
+    
+    padding: 8px;
+    border-bottom: 3px solid;
+    border-radius: 20px;
+    background-color: #fff7f7;
+    opacity: 0.9;
+  }
+.post p {
+    font-size: 25px;
+}
+
+.post .article_img{
+   margin: auto auto;
+   width: 200px;
+   height: 200px;
+}
+.post .article_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.comment {
+    margin: 30px auto;
+    width: 80%;
+    padding: 8px;
+    border-bottom: 3px solid;
+    border-radius: 20px;
+    background-color: #fff7f7;
+    opacity: 0.9;
+  }
+
+.comment p {
+    font-size: 20px;
+    border-bottom: 1px solid #333;
+}
+.Comment_form {
+    margin: 30px auto;
+    width: 80%;
+    
+    padding: 8px;
+    border-bottom: 3px solid;
+    border-radius: 20px;
+    background-color: #fff7f7;
+    opacity: 0.9;
+  }
+
+
+input {
+    background: #f8f8f8;
+    margin: auto auto;
+    display: block;
+    font-size: 16px;
+    padding: 12px 15px;
+    width: 480px;
+    height: 40px;
+    border:#fff7f7;
+    border-radius: 20px;
+  }
+textarea {
+    background: #f8f8f8;
+    margin: auto auto;
+    display: block;
+    font-size: 16px;
+    padding: 12px 15px;
+    width: 480px;
+    height: 360px;
+    border: #fff7f7;
+    border-radius: 20px;
+  }
